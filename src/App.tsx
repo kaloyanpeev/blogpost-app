@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import useCurrentUserSelector from "./store/selectors/useCurrentUserSelector";
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+  const { currentUser } = useCurrentUserSelector();
 
-export default App
+  return <div>App</div>;
+};
+
+export default App;
