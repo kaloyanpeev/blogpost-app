@@ -1,17 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { CurrentUserInterface } from "../../types/UserTypes";
 
-const initialState: CurrentUserInterface = {
-  name: "Kaloyan",
-  email: "kaloyanppeev@gmail.com",
+const initialState = {
+  user: {},
 };
 
 const currentUserSlice = createSlice({
   name: "currentUserSlice",
   initialState,
-  reducers: {},
+  reducers: {
+    logInUser(state, action) {
+      state.user = action.payload;
+    },
+    logOutUser(state) {
+      state.user = {};
+    },
+  },
 });
 
-export const {} = currentUserSlice.actions;
+export const { logInUser, logOutUser } = currentUserSlice.actions;
 
 export default currentUserSlice.reducer;
