@@ -47,13 +47,16 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
-    background-color: ${lightModeColors.primaryBgColor};
-    color: ${lightModeColors.textColor};
+    background-color: ${lightModeColors.fdsgray00};
+    color: ${lightModeColors.fdsprimarytext};
   }
 
   /* A elements that don't have a class get default styles */
   a:not([class]) {
     text-decoration-skip-ink: auto;
+  }
+  a {
+    text-decoration: none;
   }
 
   /* Make images easier to work with */
