@@ -1,6 +1,11 @@
 import React from "react";
 import { Field, Formik } from "formik";
-import { StyledForm, StyledFormContainer, StyledLogInButton } from "./SIgnInForm.styles";
+import {
+  StyledForm,
+  StyledFormContainer,
+  StyledLogInButton,
+} from "./SIgnInForm.styles";
+import SignupSchema from "../../../../schemas/logInSchema";
 
 const SignInForm = () => {
   const handleSubmit = (values: any) => {
@@ -18,14 +23,24 @@ const SignInForm = () => {
           handleSubmit(values);
           actions.resetForm();
         }}
+        validationSchema={SignupSchema}
+        validateOnMount={true}
+        validateOnChange={true}
       >
-        {({ handleSubmit }) => (
+        {({ handleSubmit, isValid, values, initialValues }) => (
           <StyledForm onSubmit={handleSubmit}>
-            <label htmlFor="email">E-mail</label>
-            <Field name="email" type="email" placeholder="Type your e-mail" />
-            <label htmlFor="email">Password</label>
-            <Field name="password" type="password" placeholder="Type your password" />
-            <StyledLogInButton type="submit">Log In</StyledLogInButton>
+            <Field name="email" type="email" placeholder="E-mail" />
+            <Field name="password" type="password" placeholder="Password" />
+            <StyledLogInButton
+              type="submit"
+              disabled={
+                !isValid ||
+                Object.entries(values).toString() ===
+                  Object.entries(initialValues).toString()
+              }
+            >
+              Log In
+            </StyledLogInButton>
           </StyledForm>
         )}
       </Formik>
