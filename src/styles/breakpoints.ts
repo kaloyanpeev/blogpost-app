@@ -1,4 +1,5 @@
 export const breakpoints = {
+  mobilePortraitSmallMax: "(max-width: 450px)",
   mobilePortraitMax: "(max-width: 575.98px)",
   mobileLandscapeMax: "(max-width: 767.98px)",
   tabletsMax: "(max-width: 991.98px)",
