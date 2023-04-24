@@ -1,11 +1,9 @@
 import styled, { css } from "styled-components";
 import { fonts } from "./fontSizes";
+import { CenteredRow } from "./layout";
 
 export const Button = css`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  ${CenteredRow}
   border-radius: 5px;
   font-weight: ${fonts.weight.semiBold};
   font-family: ${fonts.family.main};

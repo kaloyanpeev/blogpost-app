@@ -2,13 +2,12 @@ import styled from "styled-components";
 import { lightModeColors } from "../utils/colors";
 import { fonts } from "../styles/fontSizes";
 import { breakpoints } from "../styles/breakpoints";
+import { CenteredColumn, CenteredRow } from "../styles/layout";
 
 export const StyledSignInPage = styled.div`
   margin: 0 auto;
   margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  ${CenteredColumn}
   @media ${breakpoints.mobilePortraitSmallMax} {
     margin-top: 0px;
   }
@@ -40,10 +39,8 @@ export const StyledSignInPageCard = styled.div`
 `;
 
 export const StyledAlternateSignInDiv = styled.div`
-  display: flex;
-  flex-direction: row;
+  ${CenteredRow}
   width: 100%;
-  align-items: center;
   > div:nth-child(odd) {
     flex-grow: 1;
     height: 1px;
@@ -61,6 +58,7 @@ export const StyledSignUpCard = styled(StyledSignInPageCard)`
   flex-direction: row;
   margin-top: 20px;
   justify-content: center;
+  align-items: center;
   @media ${breakpoints.mobilePortraitSmallMax} {
     margin-top: 0px;
   }

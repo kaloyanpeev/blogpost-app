@@ -26,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     height: 100%;
     min-height: 100%;
-    font-family: "Open Sans" sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     overflow-x: hidden;
   }

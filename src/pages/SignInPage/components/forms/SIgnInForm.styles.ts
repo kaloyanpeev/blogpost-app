@@ -2,14 +2,14 @@ import styled from "styled-components";
 import { Button } from "../../../../styles/components";
 import { fonts } from "../../../../styles/fontSizes";
 import { lightModeColors } from "../../../../utils/colors";
+import { FlexboxColumn } from "../../../../styles/layout";
 
 export const StyledFormContainer = styled.div`
   width: 100%;
 `;
 
 export const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
+  ${FlexboxColumn}
   > input {
     margin-bottom: 20px;
     background: transparent;
